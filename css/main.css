@@ -76,7 +76,7 @@ body {
     radial-gradient(
       ellipse at bottom,
       var(--dark-color),
-      rgba(145, 233, 255, 0.2)
+      rgba(0, 0, 0, 0)
     ),
     repeating-linear-gradient(
       220deg,
@@ -99,7 +99,7 @@ body {
       transparent 19px,
       transparent 22px
     ),
-    linear-gradient(90deg, rgb(0, 255, 250), rgb(240, 240, 240));
+    linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0));
 }
 
 .flowers {
@@ -408,7 +408,7 @@ body {
       transparent,
       rgba(255, 255, 255, 0.2)
     ),
-    linear-gradient(to top, transparent 10%, #14757a, #39c6d6);
+    linear-gradient(to top, transparent 10%, #b246f2, #b246f2);
   box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
   -webkit-animation: grow-flower-tree 4s backwards;
   animation: grow-flower-tree 4s backwards;
@@ -462,14 +462,14 @@ body {
   bottom: 0vmin;
   width: 1vmin;
   height: 1vmin;
-  background-color: rgb(255, 251, 0);
+  background-color: rgb(188, 122, 246);
   border-radius: 50%;
   filter: blur(0.2vmin);
   -webkit-animation: light-ans 4s linear infinite backwards;
   animation: light-ans 4s linear infinite backwards;
 }
 .flower__light:nth-child(odd) {
-  background-color: #23f0ff;
+  background-color: #6b2295;
 }
 .flower__light--1 {
   left: -2vmin;
@@ -541,7 +541,7 @@ body {
   width: 7vmin;
   height: 10vmin;
   border-top-right-radius: 100%;
-  border-right: var(--line-w) solid var(--c);
+  border-right: var(--line-w) solid #b246f2;
   transform-origin: bottom center;
   transform: rotate(-2deg);
 }
@@ -549,7 +549,7 @@ body {
   margin-top: -2px;
   width: var(--line-w);
   height: 25vmin;
-  background-image: linear-gradient(to top, transparent, var(--c));
+  background-image: linear-gradient(to top, transparent, #b246f2);
 }
 .flower__grass__leaf {
   --size: 10vmin;
@@ -562,7 +562,7 @@ body {
     to top,
     transparent,
     transparent 30%,
-    var(--c)
+    #b246f2
   );
   z-index: 100;
 }
@@ -739,7 +739,7 @@ body {
 .flower__g-long {
   --w: 2vmin;
   --h: 6vmin;
-  --c: #159faa;
+  --c: #b246f2;
   position: absolute;
   bottom: 10vmin;
   left: -3vmin;
@@ -797,13 +797,13 @@ body {
   width: 30vmin;
   height: 50vmin;
   border-top-left-radius: 100%;
-  border-left: 2vmin solid #079097;
+  border-left: 2vmin solid #b246f2;
   background-image: linear-gradient(
     to bottom,
     transparent,
     var(--dark-color) 60%
   );
-  -webkit-mask-image: linear-gradient(to top, transparent 30%, #079097 60%);
+  -webkit-mask-image: linear-gradient(to top, transparent 30%, #b246f2 60%);
 }
 .flower__g-right--1 {
   -webkit-animation: flower-g-right-ans 2.5s linear infinite;
@@ -890,7 +890,7 @@ body {
   background-image: linear-gradient(
     to top,
     transparent,
-    #079097,
+    #b246f2,
     transparent 100%
   );
   position: relative;
@@ -1007,7 +1007,7 @@ body {
       transparent,
       var(--dark-color)
     ),
-    linear-gradient(to bottom right, #159faa 50%, transparent 50%, transparent);
+    linear-gradient(to bottom right, #b246f2 50%, transparent 50%, transparent);
   -webkit-mask-image: linear-gradient(
     to bottom right,
     #159faa 50%,
@@ -1052,8 +1052,8 @@ body {
   width: 30vmin;
   height: 50vmin;
   border-top-left-radius: 100%;
-  border-left: 2vmin solid #079097;
-  -webkit-mask-image: linear-gradient(to top, transparent 25%, #079097 50%);
+  border-left: 2vmin solid #b246f2;
+  -webkit-mask-image: linear-gradient(to top, transparent 25%, #b246f2 50%);
   position: relative;
   z-index: 1;
 }
@@ -1070,7 +1070,7 @@ body {
       transparent,
       var(--dark-color) 98%
     ),
-    linear-gradient(to bottom right, #23f0ff 45%, transparent 50%, transparent);
+    linear-gradient(to bottom right, #b246f2 45%, transparent 50%, transparent);
   -webkit-mask-image: linear-gradient(
     135deg,
     #159faa 40%,
@@ -1208,7 +1208,7 @@ body {
   -webkit-mask-image: linear-gradient(
     to top,
     transparent 40%,
-    #079097 80%
+    #b246f2 80%
   ) !important;
 }
 .long-g--1 .leaf--1 {
@@ -1229,7 +1229,7 @@ body {
   -webkit-mask-image: linear-gradient(
     to top,
     transparent 50%,
-    #079097 80%
+    #b246f2 80%
   ) !important;
 }
 .long-g--2 .leaf--1,
@@ -1245,7 +1245,7 @@ body {
   -webkit-mask-image: linear-gradient(
     to top,
     transparent 40%,
-    #079097 80%
+    #b246f2 80%
   ) !important;
 }
 .long-g--4 {
@@ -1258,7 +1258,7 @@ body {
   -webkit-mask-image: linear-gradient(
     to top,
     transparent 50%,
-    #079097 80%
+    #b246f2 80%
   ) !important;
 }
 .long-g--5 {
