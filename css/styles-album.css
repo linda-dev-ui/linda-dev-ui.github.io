@@ -1,0 +1,90 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Oculta barras de desplazamiento para que solo se vea el "cuadro negro" */
+    background-color: #000000; /* Fondo oscuro simula el cuadro negro de 1x1m */
+    font-family: sans-serif;
+}
+
+#photo-album {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    cursor: grab; /* Indica que los elementos son arrastrables */
+}
+
+.photo-item {
+    position: absolute;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7); /* Sombra para dar efecto de profundidad */
+    border: 10px solid white; /* Borde que simula el papel fotográfico */
+    box-sizing: border-box;
+    transition: box-shadow 0.2s ease, transform 0.2s ease; /* Transición suave */
+    will-change: transform; /* Optimización de rendimiento para el arrastre */
+    cursor: grab;
+    z-index: 10; /* Z-index base para apilamiento */
+}
+
+.photo-item.dragging {
+    cursor: grabbing;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.9); /* Sombra más pronunciada al arrastrar */
+    z-index: 1000; /* Lo pone por encima de todas las demás mientras se arrastra */
+}
+
+.photo-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+}
+
+/* Opcional: Estilos para darle un toque más "análogo" */
+.photo-item:nth-child(3n) {
+    border: 5px solid #fff0f0; /* Diferentes bordes para variedad */
+}
+
+.photo-item:nth-child(5n) {
+    border: 15px solid #f0f0ff;
+}
+
+
+/* Estilo para las partículas de fondo */
+.particle {
+    position: absolute;
+    border-radius: 50%; /* Para que sean bolitas */
+    background-color: #b246f2; /* Morado vibrante */
+    box-shadow: 0 0 10px 5px #ac7ec9; /* Efecto difuminado (glow) */
+    opacity: 0; /* Empiezan invisibles */
+    animation: ascend 15s linear infinite; /* Aplica la animación de subida */
+    pointer-events: none; /* Crucial: Ignora los clics para que no interfieran con las fotos */
+}
+
+/* Animación de subida */
+@keyframes ascend {
+    0% {
+        transform: translateY(100vh) scale(0.5); /* Empieza desde abajo */
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.8; /* Brillo máximo en la mitad */
+    }
+    100% {
+        transform: translateY(-20vh) scale(1.2); /* Sube hasta desaparecer por arriba */
+        opacity: 0;
+    }
+}
+
+/* Estilo para la marca de agua estática */
+#watermark {
+    position: fixed; /* Mantiene el texto fijo en la ventana */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el texto */
+    font-size: 8vw; /* Tamaño muy grande, relativo al ancho de la pantalla */
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.28); /* Color blanco casi invisible (sólo 5% de opacidad) */
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+    z-index: 1; /* Valor muy bajo para que quede detrás de fotos (z-index 10+) y partículas */
+    pointer-events: none; /* Asegura que no bloquee el clic/arrastre de las fotos */
+    user-select: none; /* Evita que el usuario pueda seleccionar el texto */
+    text-shadow: 2px 2px 4px rgba(248, 248, 248, 14); /* Añade una sombra sutil para contraste */
+}
