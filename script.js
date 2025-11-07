@@ -1,6 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
     const album = document.getElementById('photo-album');
+    const watermark = document.getElementById('watermark');
+    const SECRET_PIN = "030223";
+    // Elementos de la nueva pantalla de PIN
+    const pinScreen = document.getElementById('pin-screen');
+    const pinInput = document.getElementById('pin-input');
+    const pinSubmit = document.getElementById('pin-submit');
+    const pinMessage = document.getElementById('pin-message');
 
+    // Función para obtener un número aleatorio dentro de un rango
+    const getRandom = (min, max) => Math.random() * (max - min) + min;
+
+
+    // Función auxiliar para obtener las coordenadas del evento
+    function getCoords(e) {
+        if (e.type.includes('touch')) {
+            return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        } else {
+            return { x: e.clientX, y: e.clientY };
+        }
+    }
+
+    function loadAlbum() {
+
+        // Ocultar la pantalla del PIN con una transición suave
+        pinScreen.style.opacity = '0';
+        setTimeout(() => {
+            pinScreen.style.display = 'none';
+        }, 500); // Espera 0.5s para que termine la transición
+
+        // Muestra el contenido oculto
+        album.style.display = 'block';
+        watermark.style.display = 'block';
     // 1. DEFINE TUS FOTOS AQUÍ
     // Reemplaza 'path/to/...' con las rutas reales de tus imágenes.
     const photoUrls = [
@@ -58,9 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let maxZIndex = 10; // Contador para el apilamiento (z-index)
 
-    // Función para obtener un número aleatorio dentro de un rango
-    const getRandom = (min, max) => Math.random() * (max - min) + min;
-
+    
     // 2. CREAR Y POSICIONAR LAS FOTOS ALEATORIAMENTE
     photoUrls.forEach(url => {
         const photoItem = document.createElement('div');
@@ -114,14 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     album.addEventListener('touchend', dragEnd, false);
     album.addEventListener('touchmove', drag, false);
     
-    // Función auxiliar para obtener las coordenadas del evento
-    function getCoords(e) {
-        if (e.type.includes('touch')) {
-            return { x: e.touches[0].clientX, y: e.touches[0].clientY };
-        } else {
-            return { x: e.clientX, y: e.clientY };
-        }
-    }
+    
 
     function dragStart(e) {
         const targetPhoto = e.target.closest('.photo-item');
@@ -208,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault(); 
     }
     
-
+}
 
     // --- CÓDIGO PARA EL EFECTO DE PARTÍCULAS ---
 
@@ -260,4 +282,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // --- FIN DEL CÓDIGO DE PARTÍCULAS ---
+
+
+    // --- 2. LÓGICA DE VALIDACIÓN DEL PIN ---
+    
+    function checkPin() {
+        const enteredPin = pinInput.value.trim();
+
+        if (enteredPin === SECRET_PIN) {
+            // PIN CORRECTO
+            pinMessage.textContent = 'Acceso concedido...';
+            pinInput.disabled = true;
+            pinSubmit.disabled = true;
+            loadAlbum();
+        } else {
+            // PIN INCORRECTO
+            pinMessage.textContent = 'PIN INCORRECTO. Inténtalo de nuevo.';
+            pinMessage.style.color = '#ff5555'; // Rojo para el error
+            pinInput.value = ''; 
+            pinInput.focus();
+        }
+    }
+
+    // Escuchar el botón de acceso
+    pinSubmit.addEventListener('click', checkPin);
+    
+    // Permitir acceso con la tecla Enter
+    pinInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            checkPin();
+        }
+    });
 });
