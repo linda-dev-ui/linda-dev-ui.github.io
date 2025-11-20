@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* CLAVE: Asegura que el padding no cause desbordamiento */
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -5,20 +11,30 @@ body, html {
     font-family: 'Open Sans', sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     background: linear-gradient(to bottom right, #b246f2, #eacdfb); /* Fondo suave */
     /*overflow: auto;*/
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .calendar-container {
     background-color: #ffffff;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    padding: 30px;
+    padding: 15px;
     text-align: center;
-    max-width: 900px;
-    width: 95%;
-    margin: 20px;
+    /* QUITAMOS el max-width que puede causar problemas de espacio vacío */
+    /* max-width: 900px; */ 
+    
+    /* Aseguramos que ocupe casi el 100% del ancho disponible */
+    width: 95%; 
+    
+    /* Mantenemos el margen vertical */
+    margin: 50px auto; 
+    
+    /* Opcional: Asegurar que el padding interno no se exceda en móviles */
+    box-sizing: border-box;
 }
 
 h1 {
@@ -230,3 +246,43 @@ h1 {
     margin-top: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+
+/* --- INICIO DE AJUSTES PARA CELULARES (Media Query) --- */
+@media (max-width: 500px) {
+    
+    /* 1. Ajuste del Título */
+    .calendar-container h1 {
+        font-size: 2em; /* Hace el título más pequeño en el móvil */
+        margin-bottom: 20px;
+        padding: 20px 10px;
+    }
+    
+    /* 2. Ajuste del Contenedor del Calendario */
+    .advent-calendar {
+        /* ¡La clave de la adaptación! Reducimos de 5 columnas a 3 */
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 5px; /* Reducimos el espacio entre cajitas para aprovechar el espacio */
+        padding: 10px;
+    }
+
+    /* 3. Ajuste de las Cajitas que se expanden */
+    /* Las cajitas que eran 'span-2-col' (doble ancho) ahora solo ocupan 2/3 del ancho */
+    .calendar-day.span-2-col {
+        grid-column: span 2; 
+    }
+
+    /* Las cajitas grandes (span-2-row) mantendrán su tamaño, pero al cambiar
+       el ancho de las columnas, se adaptarán. */
+
+    /* 4. Ajuste de la Fuente en Cajitas Pequeñas */
+    .calendar-day.size-small {
+        font-size: 1.2em;
+    }
+    .calendar-day.size-medium {
+        font-size: 1.5em;
+    }
+    .calendar-day.size-large {
+        font-size: 2em;
+    }
+}
+/* --- FIN DE AJUSTES PARA CELULARES --- */
