@@ -114,6 +114,12 @@ h1 {
     transform: none; /* Quita la transformación al abrir */
 }
 
+.calendar-day.current-day.opened { /* AÑADIMOS .opened a la regla de prioridad */
+    /* El día actual ABIERTO debe verse con el color rojo, pero con opacidad 1 */
+    background-color: #ce6fff; /* Color del día abierto */
+    opacity: 1; /* ¡Sobrescribe la opacidad 0.4 de .opened! */
+}
+
 .calendar-day.current-day {
     border: 5px solid #b246f2; /* Color morado brillante para el día actual */
     box-shadow: 0 0 25px rgba(178, 70, 242, 0.8), 0 0 40px rgba(178, 70, 242, 0.5); /* Doble sombra para un efecto de brillo */
