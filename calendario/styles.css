@@ -1,18 +1,21 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box; /* CLAVE: Asegura que el padding no cause desbordamiento */
+    box-sizing: border-box;
+    /* CLAVE: Asegura que el padding no cause desbordamiento */
 }
 
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
-   /* height: 100%;*/
+    /* height: 100%;*/
     font-family: 'Open Sans', sans-serif;
     display: flex;
     justify-content: center;
     /* align-items: center; */
-    background: linear-gradient(to bottom right, #b246f2, #eacdfb); /* Fondo suave */
+    background: linear-gradient(to bottom right, #b246f2, #eacdfb);
+    /* Fondo suave */
     /*overflow: auto;*/
     width: 100%;
     overflow-x: hidden;
@@ -25,43 +28,47 @@ body, html {
     padding: 15px;
     text-align: center;
     /* QUITAMOS el max-width que puede causar problemas de espacio vacío */
-    /* max-width: 900px; */ 
-    
+    /* max-width: 900px; */
+
     /* Aseguramos que ocupe casi el 100% del ancho disponible */
-    width: 95%; 
-    
+    width: 95%;
+
     /* Mantenemos el margen vertical */
-    margin: 50px auto; 
-    
+    margin: 50px auto;
+
     /* Opcional: Asegurar que el padding interno no se exceda en móviles */
     box-sizing: border-box;
 }
 
 h1 {
     font-family: 'Pacifico', cursive;
-    color: #c0392b; /* Rojo navideño */
+    color: #c0392b;
+    /* Rojo navideño */
     font-size: 3em;
     margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .advent-calendar {
     display: grid;
     /* Usaremos grid-template-columns para definir columnas de ancho variable */
     /* Puedes ajustar estos valores según cómo quieres que se distribuyan */
-    grid-template-columns: repeat(5, 1fr); /* Ejemplo: 6 columnas flexibles */
+    grid-template-columns: repeat(5, 1fr);
+    /* Ejemplo: 6 columnas flexibles */
     /* grid-template-columns: 1.2fr 0.8fr 1fr 1.1fr 0.9fr 1.3fr; /* Otro ejemplo: columnas de ancho más variad */
     /* Puedes jugar con los valores y la cantidad de 'fr' */
 
     /* Reducimos el espacio entre las cajitas */
-    gap: 8px; /* Reducido de 15px a 8px o incluso menos */
-    
-    padding: 15px; /* Reducir un poco el padding si el gap es pequeño */
-    background-image: url('../img/25.jpg'); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-color: #f7f7f7; 
+    gap: 8px;
+    /* Reducido de 15px a 8px o incluso menos */
+
+    padding: 15px;
+    /* Reducir un poco el padding si el gap es pequeño */
+    background-image: url('../img/25.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f7f7f7;
     border-radius: 15px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -69,15 +76,17 @@ h1 {
 .calendar-day {
     position: relative;
     /* Quitamos el width y height fijos para que Grid y JS los controlen */
-    /* width: 100px; */ 
-    /* height: 100px; */ 
-    
+    /* width: 100px; */
+    /* height: 100px; */
+
     /* Añadimos un min-width y min-height para que no se hagan demasiado pequeñas */
-    min-width: 80px; 
-    min-height: 80px; 
-    
-    background-color: #2ecc71; 
-    border-radius: 10px; /* Redondez más uniforme */
+    min-width: 80px;
+    min-height: 80px;
+
+    background-color: #2ecc71;
+    background-image: none;
+    border-radius: 10px;
+    /* Redondez más uniforme */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,11 +96,21 @@ h1 {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    
+
     /* Ajustes para el texto dentro de la cajita si es necesario */
-    padding: 5px; /* Pequeño padding para que el número no se pegue al borde */
+    padding: 5px;
+    /* Pequeño padding para que el número no se pegue al borde */
     text-align: center;
-    overflow: hidden; /* Asegura que el número no se desborde si la cajita es pequeña */
+    overflow: hidden;
+    /* Asegura que el número no se desborde si la cajita es pequeña */
+}
+
+.calendar-day .day-content-image {
+    width: 100%;       /* Ocupa el 100% del ancho de la cajita */
+    height: 100%;      /* Ocupa el 100% del alto de la cajita */
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
+    display: block;    /* Para que se comporte como un bloque y respete el 100% del alto */
+    border-radius: 7px; /* Un poco menos que el radio de la cajita para que no se salga */
 }
 
 .calendar-day:hover:not(.opened):not(.locked) {
@@ -100,30 +119,43 @@ h1 {
 }
 
 .calendar-day.locked {
-    background-color: #bdc3c7; /* Gris para días bloqueados */
+    background-color: #bdc3c7;
+    /* Gris para días bloqueados */
     cursor: not-allowed;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
     opacity: 0.7;
 }
 
 .calendar-day.opened {
-    background-color: #ce6fff; /* Rojo para días abiertos */
-    opacity: 0.5; /* Opacidad para indicar que ya se abrió */
-    cursor: default;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-    transform: none; /* Quita la transformación al abrir */
+    /* Limpiamos el color de fondo */
+    background-color: transparent !important; 
+    border: none !important; /* Quitamos el borde una vez abierto para que la imagen sea protagonista */
+    padding: 0; /* Aseguramos que el padding no estorbe a la imagen */
+    
+    opacity: 0.4; /* Opacidad para días anteriores abiertos */
+    box-shadow: none; /* Quitamos la sombra */
+}
+.calendar-day .day-content-image {
+    width: 100%;      
+    height: 100%;     
+    /* Esto es crucial para que la imagen cubra todo y no se vea el fondo */
+    object-fit: cover; 
+    border-radius: 7px; 
 }
 
-.calendar-day.current-day.opened { /* AÑADIMOS .opened a la regla de prioridad */
-    /* El día actual ABIERTO debe verse con el color rojo, pero con opacidad 1 */
-    background-color: #ce6fff; /* Color del día abierto */
-    opacity: 1; /* ¡Sobrescribe la opacidad 0.4 de .opened! */
+.calendar-day.current-day.opened {
+   background-color: transparent !important;
+    opacity: 1 !important; /* Opacidad normal */
+    border: none !important; /* Quitamos el borde para que se vea solo la imagen */
 }
 
 .calendar-day.current-day {
-    border: 5px solid #b246f2; /* Color morado brillante para el día actual */
-    box-shadow: 0 0 25px rgba(178, 70, 242, 0.8), 0 0 40px rgba(178, 70, 242, 0.5); /* Doble sombra para un efecto de brillo */
-    transform: scale(1.05); /* Ligeramente más grande para que destaque */
+    border: 5px solid #b246f2;
+    /* Color morado brillante para el día actual */
+    box-shadow: 0 0 25px rgba(178, 70, 242, 0.8), 0 0 40px rgba(178, 70, 242, 0.5);
+    /* Doble sombra para un efecto de brillo */
+    transform: scale(1.05);
+    /* Ligeramente más grande para que destaque */
     animation: pulse-border 1.5s infinite alternate;
     opacity: 1;
 }
@@ -131,8 +163,8 @@ h1 {
 /* --- NUEVAS CLASES PARA VARIAR TAMAÑO Y POSICIÓN --- */
 .calendar-day.size-small {
     /* Dejamos que Grid controle el ancho y alto base */
-    min-width: 70px; 
-    min-height: 70px; 
+    min-width: 70px;
+    min-height: 70px;
     font-size: 1.5em;
 }
 
@@ -150,24 +182,30 @@ h1 {
 
 /* Clases de expansión (GRID) */
 .calendar-day.span-2-col {
-    grid-column: span 2; /* Ocupa 2 columnas de ancho */
+    grid-column: span 2;
+    /* Ocupa 2 columnas de ancho */
 }
+
 .calendar-day.span-2-row {
-    grid-row: span 2;    /* Ocupa 2 filas de alto */
+    grid-row: span 2;
+    /* Ocupa 2 filas de alto */
 }
+
 .calendar-day.span-3-col {
     grid-column: span 3;
 }
 
 .calendar-day.span-2-col,
 .calendar-day.span-2-row {
-    font-size: 3em; /* Letra más grande para los cuadros grandes */
+    font-size: 3em;
+    /* Letra más grande para los cuadros grandes */
 }
 
 @keyframes pulse-border {
     from {
         box-shadow: 0 0 25px rgba(178, 70, 242, 0.8), 0 0 40px rgba(178, 70, 242, 0.5);
     }
+
     to {
         box-shadow: 0 0 35px rgba(178, 70, 242, 1), 0 0 55px rgba(178, 70, 242, 0.7);
     }
@@ -250,31 +288,52 @@ h1 {
     height: auto;
     border-radius: 10px;
     margin-top: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.message-box .daily-message-image {
+    max-width: 100%;
+    /* Altura máxima para que no se exceda en pantallas pequeñas */
+    max-height: 250px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    /* Asegura que la imagen se vea sin estirarse */
+    border-radius: 10px;
+    margin: 15px 0 25px 0;
+    /* Espacio antes y después de la imagen */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.message-box .personal-image {
+    display: none;
+    /* Ocultamos la imagen anterior si ya no es necesaria */
 }
 
 /* --- INICIO DE AJUSTES PARA CELULARES (Media Query) --- */
 @media (max-width: 500px) {
-    
+
     /* 1. Ajuste del Título */
     .calendar-container h1 {
-        font-size: 2em; /* Hace el título más pequeño en el móvil */
+        font-size: 2em;
+        /* Hace el título más pequeño en el móvil */
         margin-bottom: 20px;
         padding: 20px 10px;
     }
-    
+
     /* 2. Ajuste del Contenedor del Calendario */
     .advent-calendar {
         /* ¡La clave de la adaptación! Reducimos de 5 columnas a 3 */
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 5px; /* Reducimos el espacio entre cajitas para aprovechar el espacio */
+        gap: 5px;
+        /* Reducimos el espacio entre cajitas para aprovechar el espacio */
         padding: 10px;
     }
 
     /* 3. Ajuste de las Cajitas que se expanden */
     /* Las cajitas que eran 'span-2-col' (doble ancho) ahora solo ocupan 2/3 del ancho */
     .calendar-day.span-2-col {
-        grid-column: span 2; 
+        grid-column: span 2;
     }
 
     /* Las cajitas grandes (span-2-row) mantendrán su tamaño, pero al cambiar
@@ -284,11 +343,14 @@ h1 {
     .calendar-day.size-small {
         font-size: 1.2em;
     }
+
     .calendar-day.size-medium {
         font-size: 1.5em;
     }
+
     .calendar-day.size-large {
         font-size: 2em;
     }
 }
+
 /* --- FIN DE AJUSTES PARA CELULARES --- */
