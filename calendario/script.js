@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/4.jpeg"
         },
         5: {
-            message: "Hoy es un gran día para hacer algo que amas. ❤️",
+            message: "",
             imagePath: "../img/5.jpeg"
         },
         6: {
@@ -39,19 +39,19 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/6.jpeg"
         },
         7: {
-            message: "Encuentra la calma en el caos. 🧘‍♀️",
+            message: "Hoy es un gran día y más porque estamos juntos🥰❤️",
             imagePath: "../img/7.jpg"
         },
         8: {
-            message: "Una sonrisa es el mejor accesorio que puedes llevar. 😁",
+            message: "",
             imagePath: "../img/8.jpeg"
         },
         9: {
-            message: "No cuentes los días, haz que los días cuenten. ⏳",
+            message: "",
             imagePath: "../img/9.jpeg"
         },
         10: {
-            message: "Cree en ti mismo. Eres más fuerte de lo que piensas. 💪",
+            message: "Cree en ti misma. Eres más fuerte de lo que piensas y yo estoy contigo",
             imagePath: "../img/10.jpeg"
         },
         11: {
@@ -59,15 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/11.jpeg"
         },
         12: {
-            message: "La vida es una aventura. ¡Atrévete a explorarla! 🗺️",
+            message: "",
             imagePath: "../img/12.jpeg"
         },
         13: {
-            message: "Toma un momento para respirar y agradecer. 💖",
+            message: "",
             imagePath: "../img/13.jpeg"
         },
         14: {
-            message: "Un pequeño detalle puede iluminar todo tu día. 🕯️",
+            message: "Un pequeño detalle puede iluminar todo tu día.",
             imagePath: "../img/14.jpeg"
         },
         15: {
@@ -75,11 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/15.jpeg"
         },
         16: {
-            message: "El amor es la fuerza más poderosa. ¡Abrázalo! 🤗",
+            message: "",
             imagePath: "../img/16.jpeg"
         },
         17: {
-            message: "Hoy es el día perfecto para perseguir ese sueño. 🚀",
+            message: "",
             imagePath: "../img/17.jpeg"
         },
         18: {
@@ -87,23 +87,23 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/18.jpeg"
         },
         19: {
-            message: "Dedica tiempo a lo que realmente importa. ⏳",
+            message: "",
             imagePath: "../img/19.jpg"
         },
         20: {
-            message: "La esperanza es un buen desayuno, pero una mala cena. ¡Actúa hoy! 💡",
+            message: "",
             imagePath: "../img/20.jpeg"
         },
         21: {
-            message: "¡Casi Navidad! La alegría está en el aire. 🎄",
+            message: "",
             imagePath: "../img/21.jpeg"
         },
         22: {
-            message: "La mejor vista viene después de la subida más difícil. ⛰️",
+            message: "",
             imagePath: "../img/22.jpeg"
         },
         23: {
-            message: "Nunca es demasiado tarde para empezar de nuevo. 🔄",
+            message: "",
             imagePath: "../img/23.jpeg"
         },
         24: {
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/24.jpeg"
         },
         25: {
-            message: "¡FELIZ NAVIDAD! Que la paz y el amor llenen tu hogar. 🎅",
+            message: "¡FELIZ NAVIDAD! Que la paz y el amor llenen tu familia que es el mejor regalo que tenemos. La vida también es un regalo 💖",
             imagePath: "../img/1.jpeg"
         },
         26: {
