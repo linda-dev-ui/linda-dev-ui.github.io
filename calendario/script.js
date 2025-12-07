@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/25.jpg"
         },
         2: {
-            message: "",
+            message: "Por más días como los de ayer, por más días como los de hoy, por más días como los de mañana",
             imagePath: "../img/2.jpeg"
         },
         3: {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/4.jpeg"
         },
         5: {
-            message: "",
+            message: "Mi linda, mi linda gracias por todo y ser tan especial conmigo y para mi",
             imagePath: "../img/5.jpeg"
         },
         6: {
@@ -43,11 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/7.jpg"
         },
         8: {
-            message: "",
+            message: "Una velita por nosotros 🕯️",
             imagePath: "../img/8.jpeg"
         },
         9: {
-            message: "",
+            message: "Eres una gran mujer, una gran mamá y una gran persona, y eso me hace muy feliz",
             imagePath: "../img/9.jpeg"
         },
         10: {
