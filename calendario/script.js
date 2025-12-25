@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/25.jpg"
         },
         2: {
-            message: "",
+            message: "El mejor momento del día es cuando estoy contigo.",
             imagePath: "../img/2.jpeg"
         },
         3: {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/4.jpeg"
         },
         5: {
-            message: "",
+            message: "Cada momento contigo es un regalo que quiero tener siempre.",
             imagePath: "../img/5.jpeg"
         },
         6: {
@@ -39,15 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/6.jpeg"
         },
         7: {
-            message: "Hoy es un gran día y más porque estamos juntos🥰❤️",
+            message: "Hoy es un gran día y más porque estamos juntos 🥰❤️ felices meses mi linda, por mas meses juntos",
             imagePath: "../img/7.jpg"
         },
         8: {
-            message: "",
+            message: "No hay nada que me guste más que ver cómo brillas cuando estás feliz, que nada ni nadie te quite eso porque tambien me lo esta quitando a mi",
             imagePath: "../img/8.jpeg"
         },
         9: {
-            message: "",
+            message: "A pesar de que llevamos poco tiempo, siento que hemos creado algo muy especial.",
             imagePath: "../img/9.jpeg"
         },
         10: {
@@ -59,11 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/11.jpeg"
         },
         12: {
-            message: "",
+            message: "Nunca imaginé que en tan poco tiempo pudiera sentirme tan cómodo y feliz contigo.",
             imagePath: "../img/12.jpeg"
         },
         13: {
-            message: "",
+            message: "Gracias por hacerme sentir bien y por todo lo que das de ti misma.",
             imagePath: "../img/13.jpeg"
         },
         14: {
@@ -71,15 +71,15 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/14.jpeg"
         },
         15: {
-            message: "Mitad de mes, ¡sigue adelante con energía! 🔋",
+            message: "Creo en ti con todo mi corazón, y sé que harás cosas grandiosas porque tienes el poder de lograrlo todo.",
             imagePath: "../img/15.jpeg"
         },
         16: {
-            message: "",
+            message: "El simple hecho de saber que estás pensando en mí me hace feliz. ",
             imagePath: "../img/16.jpeg"
         },
         17: {
-            message: "",
+            message: "Aunque llevamos poco tiempo, siento que ya compartimos algo muy único y especial.",
             imagePath: "../img/17.jpeg"
         },
         18: {
@@ -87,27 +87,27 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/18.jpeg"
         },
         19: {
-            message: "",
+            message: "Cada día me sorprende más lo increíble que eres, en todos los sentidos.",
             imagePath: "../img/19.jpg"
         },
         20: {
-            message: "",
+            message: "Lo que más me gusta de estar contigo es la conexión que siento",
             imagePath: "../img/20.jpeg"
         },
         21: {
-            message: "",
+            message: "Lo increíble de ti no es solo tu lindura y vaya que lo eres, sino todo lo que eres por dentro.",
             imagePath: "../img/21.jpeg"
         },
         22: {
-            message: "",
+            message: "Eres mucho más fuerte de lo que piensas, y cada día me demuestras lo increíble que eres.",
             imagePath: "../img/22.jpeg"
         },
         23: {
-            message: "",
+            message: "Nunca olvides lo capaz y valiosa que eres. Tienes un brillo único que hace que todo a tu alrededor sea mejor.",
             imagePath: "../img/23.jpeg"
         },
         24: {
-            message: "¡Feliz Nochebuena! Que la magia de esta noche te envuelva. 🌟",
+            message: "¡Feliz Navidad! Que la paz este contigo y con nosotros siempre. Gracias por ser parte de mi vida y por hacerme tan feliz. Te quiero mucho mi Linda 💖",
             imagePath: "../img/24.jpeg"
         },
         25: {
