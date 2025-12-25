@@ -19,7 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/25.jpg"
         },
         2: {
+<<<<<<< HEAD
             message: "El mejor momento del día es cuando estoy contigo.",
+=======
+            message: "Por más días como los de ayer, por más días como los de hoy, por más días como los de mañana",
+>>>>>>> 6b1c18394d5eb7791ea951a834ff143762acc6cd
             imagePath: "../img/2.jpeg"
         },
         3: {
@@ -31,7 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/4.jpeg"
         },
         5: {
+<<<<<<< HEAD
             message: "Cada momento contigo es un regalo que quiero tener siempre.",
+=======
+            message: "Mi linda, mi linda gracias por todo y ser tan especial conmigo y para mi",
+>>>>>>> 6b1c18394d5eb7791ea951a834ff143762acc6cd
             imagePath: "../img/5.jpeg"
         },
         6: {
@@ -43,11 +51,19 @@ document.addEventListener('DOMContentLoaded', () => {
             imagePath: "../img/7.jpg"
         },
         8: {
+<<<<<<< HEAD
             message: "No hay nada que me guste más que ver cómo brillas cuando estás feliz, que nada ni nadie te quite eso porque tambien me lo esta quitando a mi",
             imagePath: "../img/8.jpeg"
         },
         9: {
             message: "A pesar de que llevamos poco tiempo, siento que hemos creado algo muy especial.",
+=======
+            message: "Una velita por nosotros 🕯️",
+            imagePath: "../img/8.jpeg"
+        },
+        9: {
+            message: "Eres una gran mujer, una gran mamá y una gran persona, y eso me hace muy feliz",
+>>>>>>> 6b1c18394d5eb7791ea951a834ff143762acc6cd
             imagePath: "../img/9.jpeg"
         },
         10: {
