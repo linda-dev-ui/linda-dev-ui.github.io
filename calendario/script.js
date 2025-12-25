@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         3: {
             message: "Recuerda los pequeños momentos que te hacen feliz y disfrutalos conmigo",
-            imagePath: "../img/3.jpeg"
+            imagePath: "../img/4.jpeg"
         },
         4: {
             message: "La felicidad no es un destino, es un viaje. ¡Disfruta el camino! 🛣️",
-            imagePath: "../img/4.jpeg"
+            imagePath: "../img/8.jpeg"
         },
         5: {
             message: "Mi linda, mi linda gracias por todo y ser tan especial conmigo y para mi",
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         8: {
             message: "No hay nada que me guste más que ver cómo brillas cuando estás feliz, que nada ni nadie te quite eso porque tambien me lo esta quitando a mi",
-            imagePath: "../img/8.jpeg"
+            imagePath: "../img/3.jpeg"
         },
         9: {
             message: "A pesar de que llevamos poco tiempo, siento que hemos creado algo muy especial.",
