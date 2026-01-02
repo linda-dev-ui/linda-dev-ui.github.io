@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const today = new Date();
     const currentDay = today.getDate(); // Día del mes (1-31)
     const currentMonth = today.getMonth(); // Mes (0 para enero, 11 para diciembre)
-    const adventMonth = 11; // Diciembre es el mes 11
+    const adventMonth = 0; // Diciembre es el mes 11
 
     // --- MENSAJES PERSONALIZADOS PARA CADA DÍA ---
     // Puedes poner tu imagen de las personas aquí o un enlace a ella
